@@ -1,7 +1,6 @@
 lua require("configure-plugins")
 
 " Preferences
-"
 
 set shiftwidth=3
 set expandtab
