@@ -1,0 +1,1 @@
+WARN  2021-12-20T20:18:00.341 8     log_path_init:95: Failed to create directory /.cache for writing logs: Unknown system error 1
