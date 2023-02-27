@@ -18,8 +18,10 @@ RUN chmod +x -R /home/neovim/bin/
 RUN chown 1000:1000 -R /home/neovim/bin/
 RUN chown 1000:1000 -R /opt
 
-RUN python3 -m pip install python-lsp-server[all]
-RUN python3 -m pip install pynvim
+RUN python3 -m pip install neovim 
+
+RUN apt install nodejs npm -y
+RUN npm install -g pyright
 
 ENV \
    WORKDIR="/mnt/workdir"\
