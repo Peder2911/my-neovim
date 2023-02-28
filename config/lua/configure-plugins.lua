@@ -24,6 +24,22 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
   use 'neovim/nvim-lspconfig'
 
+  -- Emmet
+  -- Easily write HTML
+  use 'mattn/emmet-vim'
+
+  -- EasyAlign
+  -- Align all the things 
+  use 'junegunn/vim-easy-align'
+
+  -- Hashivim 
+  -- Terraform's official terraform vim plugin
+  use 'hashivim/vim-terraform'
+
+  -- venn.nvim
+  -- Cool plugin for drawing diagrams
+  use {'jbyuki/venn.nvim', branch = 'main'}
+
   -- Configuration settings
   vim.g.python3_host_prog = '/usr/bin/python3'
 
@@ -108,22 +124,6 @@ return require('packer').startup(function()
       end
     end
   end
-
-  -- Emmet
-  -- Easily write HTML
-  use 'mattn/emmet-vim'
-
-  -- EasyAlign
-  -- Align all the things 
-  use 'junegunn/vim-easy-align'
-
-  -- Hashivim 
-  -- Terraform's official terraform vim plugin
-  use 'hashivim/vim-terraform'
-
-  -- venn.nvim
-  -- Cool plugin for drawing diagrams
-  use {'jbyuki/venn.nvim', branch = 'main'}
 
   -- venn.nvim: enable or disable keymappings
   function _G.Toggle_venn()
