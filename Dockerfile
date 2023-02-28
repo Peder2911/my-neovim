@@ -9,8 +9,8 @@ RUN apt-get install python3-pip -y
 RUN mkdir /home/neovim/bin
 ENV PATH="/home/neovim/bin/:${PATH}"
 
-RUN apt-get install wget -y
-
+# Install system utilities and requirements
+RUN apt-get install wget curl -y
 
 RUN wget https://github.com/neovim/neovim/releases/download/v0.8.3/nvim.appimage -O /home/neovim/bin/nvim.appimage
 
