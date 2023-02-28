@@ -9,7 +9,7 @@ return require('packer').startup(function()
   -- Telescope
   -- go-to-definition
   use 'nvim-lua/plenary.nvim'
-
+  use {'nvim-telescope/telescope.nvim', tag = '0.1.0'}
 
   -- Nvim cmp
   -- code completion
