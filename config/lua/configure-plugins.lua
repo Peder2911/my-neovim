@@ -24,6 +24,10 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
   use 'neovim/nvim-lspconfig'
 
+  -- Configuration settings
+  vim.g.python3_host_prog = '/usr/bin/python3'
+
+  -- CMP Setup
   local has, cmp = pcall(require, 'cmp')
   if has then
     cmp.setup({
@@ -32,7 +36,6 @@ return require('packer').startup(function()
           vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         end,
       },
-      vim.g.python3_host_prog = '/usr/bin/python3'
 
       window = {
         completion = cmp.config.window.bordered(),
@@ -75,6 +78,8 @@ return require('packer').startup(function()
       })
     })
 
+
+    -- LSP Setup
     has, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp') 
     if has then 
       local capabilities = cmp_nvim_lsp.default_capabilities()
