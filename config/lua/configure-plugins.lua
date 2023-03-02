@@ -120,6 +120,7 @@ return require('packer').startup(function()
       --lspconfig.denols.setup{
       --  capabilities = capabilities
       --}
+
         lspconfig.gopls.setup{}
       end
     end

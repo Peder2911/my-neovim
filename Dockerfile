@@ -2,6 +2,8 @@ FROM debian:11
 RUN apt update
 RUN adduser neovim 
 
+RUN apt update
+
 RUN apt-get install git -y
 RUN apt-get install python3 -y
 RUN apt-get install python3-pip -y
@@ -23,6 +25,10 @@ RUN python3 -m pip install neovim
 RUN apt install nodejs npm -y
 RUN npm install -g pyright neovim
 
+RUN wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz -O /home/neovim/go1.20.1.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf /home/neovim/go1.20.1.linux-amd64.tar.gz
+ENV PATH=/usr/local/go/bin:$PATH
+
 ENV \
    WORKDIR="/mnt/workdir"\
    APPIMAGE_EXTRACT_AND_RUN=1\
@@ -32,6 +38,9 @@ RUN mkdir -p "${WORKDIR}"
 
 WORKDIR "${WORKDIR}"
 USER neovim 
+
+RUN go install golang.org/x/tools/gopls@v0.11.0
+ENV PATH=/home/neovim/go/bin:$PATH
 
 RUN git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  /home/neovim/.local/share/nvim/site/pack/packer/start/packer.nvim
