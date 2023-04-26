@@ -40,6 +40,7 @@ WORKDIR "${WORKDIR}"
 USER neovim 
 
 RUN go install golang.org/x/tools/gopls@v0.11.0
+RUN go install github.com/cosmtrek/air@latest
 ENV PATH=/home/neovim/go/bin:$PATH
 
 RUN git clone --depth 1 https://github.com/wbthomason/packer.nvim\

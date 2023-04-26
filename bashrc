@@ -113,3 +113,5 @@ if ! shopt -oq posix; then
 fi
 
 alias nvi=/home/neovim/bin/nvim.appimage
+
+set -o vi
